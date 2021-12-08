@@ -1,0 +1,10 @@
+@import '../../mixins/media.scss';
+
+.computer {
+	width: auto;
+	padding: 30px;
+
+	@include desktop {
+		width: 50%;
+	}
+}

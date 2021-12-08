@@ -2,6 +2,7 @@ import React from 'react';
 
 import { SpecModel } from '../../interfaces/SpecModel';
 import { Part } from '../Part';
+import './Spec.scss';
 
 interface SpecProps {
 	spec: SpecModel;
@@ -9,13 +10,17 @@ interface SpecProps {
 
 export const Spec: React.FunctionComponent<SpecProps> = ({spec}) => {
 	return (
-		<section data-testid="component-spec">
+		<section
+			className="spec"
+			data-testid="component-spec">
 			<h3>{spec.name}</h3>
-			{spec.parts.map((part, index) => (
-				<Part
-					key={`part-${spec.name}-${index}`}
-					part={part} />
-			))}
+			<ul className="spec-list">
+				{spec.parts.map((part, index) => (
+					<Part
+						key={`part-${spec.name}-${index}`}
+						part={part} />
+				))}
+			</ul>
 		</section>
-	)
+	);
 };

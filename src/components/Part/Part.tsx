@@ -12,7 +12,7 @@ export const Part: React.FunctionComponent<PartProps> = ({
 	part,
 	selected = false
 }) => {
-	const selectedClass = selected ? 'part-selected' : '';
+	const selectedClass = selected ? 'selected' : '';
 
 	return (
 		<li

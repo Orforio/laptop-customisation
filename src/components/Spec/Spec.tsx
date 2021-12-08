@@ -5,10 +5,16 @@ import { Part } from '../Part';
 import './Spec.scss';
 
 interface SpecProps {
+	changePart: (newPart: number) => void;
+	selectedItem: number;
 	spec: SpecModel;
 }
 
-export const Spec: React.FunctionComponent<SpecProps> = ({spec}) => {
+export const Spec: React.FunctionComponent<SpecProps> = ({
+	changePart,
+	selectedItem,
+	spec
+}) => {
 	return (
 		<section
 			className="spec"
@@ -16,9 +22,13 @@ export const Spec: React.FunctionComponent<SpecProps> = ({spec}) => {
 			<h3>{spec.name}</h3>
 			<ul className="spec-list">
 				{spec.parts.map((part, index) => (
-					<Part
+					<span
 						key={`part-${spec.name}-${index}`}
-						part={part} />
+						onClick={() => changePart(index)}>
+						<Part
+							part={part}
+							selected={index === selectedItem} />
+					</span>
 				))}
 			</ul>
 		</section>

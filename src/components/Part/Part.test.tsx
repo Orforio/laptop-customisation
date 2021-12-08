@@ -36,7 +36,7 @@ describe('Part', () => {
 		);
 
 		// Assert
-		expect(screen.getByRole('listitem')).toHaveClass('part-selected');
+		expect(screen.getByRole('listitem')).toHaveClass('selected');
 	})
 
 	it('should not highlight the part if it is not selected', () => {
@@ -51,6 +51,6 @@ describe('Part', () => {
 		);
 
 		// Assert
-		expect(screen.getByRole('listitem')).not.toHaveClass('part-selected');
+		expect(screen.getByRole('listitem')).not.toHaveClass('selected');
 	})
 });

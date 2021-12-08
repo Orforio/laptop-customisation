@@ -1,0 +1,12 @@
+.app {
+	&-content {
+		margin: 50px 10px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&-header {
+		text-align: center;
+		text-transform: capitalize;
+	}
+}
